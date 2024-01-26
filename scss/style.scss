@@ -1,0 +1,646 @@
+$widthSite: 1140px;
+$colorSelectSite: #F16D7F;
+$backgroundBlock: #222;
+$gapHeader: 48px;
+@import 'null_style';
+@import 'mixins';
+@import 'product';
+@import 'burger';
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.center {
+    @include center ($widthSite);
+}
+
+// Header
+.header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: $backgroundBlock;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__icons-left {
+        display: flex;
+        align-items: center;
+        gap: $gapHeader;
+
+        .search {
+            cursor: pointer;
+        }
+    }
+
+    &__icons-right {
+        display: flex;
+        align-items: center;
+        gap: $gapHeader;
+    }
+}
+
+// Верхняя часть главной страницы сайта
+.top__banner {
+    background-color: #F1E4E6;
+    display: flex;
+    align-items: center;
+
+    padding-left: calc(50% - 800px);
+    padding-right: calc(50% - 800px);
+}
+
+.top__image {
+    flex: 0 0 50%;
+
+    img {
+        width: 100%;
+    }
+}
+
+.top__brand {
+    padding-left: 16px;
+    border-left: 12px solid $colorSelectSite;
+    flex: 1 1 50%;
+}
+
+.top__title {
+    color: #222;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.span-bold {
+    font-weight: 900;
+    font-size: 48px;
+}
+
+.span_pink {
+    color: $colorSelectSite;
+}
+
+// Предложения
+.offers {
+    padding-top: 65px;
+    padding-bottom: 96px;
+
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    &__item {
+        position: relative;
+        overflow: hidden;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__item_wild {
+        grid-column: span 3;
+    }
+
+    &__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &__text {
+        text-align: center;
+        color: #FFF;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+
+        span {
+            color: $colorSelectSite;
+            font-size: 24px;
+            font-weight: 700;
+        }
+    }
+}
+
+// Продукты
+.products {
+    padding-bottom: 60px;
+
+    &__title {
+        color: #222;
+        font-size: 30px;
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+
+    &__subtitle {
+        color: #9F9F9F;
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 48px;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 360px);
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 68px;
+    }
+}
+
+.item {
+    border-color: #F8F8F8;
+    text-decoration: none;
+    display: block;
+
+    &__img {
+        position: relative;
+        display: block;
+
+        & img {
+            width: 100%;
+        }
+    }
+
+    &__img_hover {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(58, 56, 56, 0.86);
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        display: flex;
+        transition: opacity 0.3s;
+    }
+
+    &:hover .item__img_hover {
+        opacity: 1;
+    }
+
+    .item__img-btn {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        padding: 11px 16px 9px 13.5px;
+        border: 1px solid #FFF;
+        color: #FFF;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    &__info {
+        padding: 24px 16px;
+    }
+
+    &__title {
+        color: #000;
+        font-size: 13px;
+        font-weight: 400;
+        margin-bottom: 16px;
+    }
+
+    &__description {
+        color: #5D5D5D;
+        font-size: 14px;
+        font-weight: 300;
+        margin-bottom: 16px;
+        max-width: 315px;
+    }
+
+    &__price {
+        color: $colorSelectSite;
+        font-size: 16px;
+        font-weight: 400;
+    }
+}
+
+.btn {
+    color: $colorSelectSite;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    gap: 23px;
+    align-items: center;
+
+
+    padding: 15px 0;
+    width: 211px;
+    border: 1px solid $colorSelectSite;
+    background-color: #fff;
+    margin: 0 auto;
+    transition: all 0.3s;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+        background-color: $colorSelectSite;
+        color: #fff;
+
+        path {
+            fill: #fff;
+        }
+    }
+}
+
+// Блок особенности
+.section-feature {
+    background-color: $backgroundBlock;
+    padding-top: 104px;
+    padding-bottom: 104px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__icon {
+        height: 40px;
+        margin-bottom: 25px;
+    }
+
+    &__title {
+        margin-bottom: 16px;
+        color: #FBFBFB;
+        font-size: 19.96px;
+        font-weight: 400;
+    }
+
+    &__text {
+        color: #FBFBFB;
+        text-align: justify;
+        font-size: 13.972px;
+        font-weight: 300;
+        max-width: 315px;
+        opacity: 0.65;
+    }
+}
+
+// Подвал
+.subscribe {
+    &__title {
+        color: #222224;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 167.2%;
+        margin-bottom: 32px;
+
+        & span {
+            font-size: 24px;
+            font-weight: 700;
+        }
+    }
+
+    &__form {
+        display: flex;
+
+        & input:focus {
+            outline: 0.5px solid $colorSelectSite;
+        }
+    }
+
+    &__email {
+        color: #222224;
+        font-size: 14px;
+        font-weight: 400;
+        opacity: 0.671;
+        background-color: #E1E1E1;
+        width: 256px;
+        height: 49px;
+        padding-left: 22px;
+        padding-right: 22px;
+        border: 0;
+        border-radius: 15px 0 0 15px;
+    }
+
+    &__btn {
+        color: #FFF;
+        background-color: $colorSelectSite;
+        width: 100px;
+        height: 49px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+        border: 0;
+        border-radius: 0 15px 15px 0;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.section-subscribe {
+    background: url(../img/footer/subscribe/background.png) lightgray no-repeat center;
+    background-size: cover;
+    padding-top: 97px;
+    padding-bottom: 150px;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    gap: 320px;
+
+    &__info {
+        max-width: 360px;
+    }
+
+    &__image {
+        text-align: center;
+
+        & img {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__text {
+        color: #222224;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 400;
+
+        & span {
+            font-style: italic;
+        }
+    }
+}
+
+.footer {
+
+    &__bottom {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        background-color: $backgroundBlock;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap-reverse;
+        gap: 40px;
+    }
+
+    &__copyright {
+        color: #FBFBFB;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    &__social {
+        display: flex;
+        gap: 7.29px;
+
+        .social__icon {
+            width: 31.5px;
+            height: 32px;
+            background-color: #FFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s;
+
+            &:hover {
+                background-color: $colorSelectSite;
+
+                & path {
+                    fill: #FFF;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 1160px) and (min-width: 1024px) {
+    .center {
+        @include center (1000px);
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .center {
+        @include center (736px);
+    }
+
+    .header {
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    .offcanvas.offcanvas-end {
+        top: 77px;
+    }
+
+    .top__title {
+        font-size: 24px;
+    }
+
+    .span-bold {
+        font-size: 44px;
+    }
+
+    .offers {
+        gap: 19px;
+        padding-bottom: 110px;
+    }
+
+    .products {
+        padding-bottom: 70.5px;
+    }
+
+    .products__title {
+        margin-bottom: 3.3px;
+    }
+
+    .products__subtitle {
+        margin-bottom: 74px;
+    }
+
+    .products__cards {
+        grid-template-columns: repeat(2, 360px);
+        gap: 16px;
+        margin-bottom: 32.5px;
+    }
+
+    .item__info {
+        padding: 25px 16px;
+    }
+
+    .section-feature {
+        flex-direction: column;
+        padding-top: 48px;
+        padding-bottom: 64px;
+        gap: 48px;
+    }
+
+    .section-subscribe {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 90px;
+        padding-top: 64px;
+        padding-bottom: 140px;
+    }
+
+    .subscribe__title {
+        line-height: 162%;
+        margin-bottom: 27px;
+    }
+}
+
+@media (max-width: 768px) {
+    .center {
+        @include center (360px);
+    }
+
+    .header {
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    .offcanvas.offcanvas-end {
+        top: 76px;
+    }
+
+    .profile {
+        display: none;
+    }
+
+    .basket {
+        display: none;
+    }
+
+    .top__image {
+        display: none;
+    }
+
+    .top__title {
+        font-size: 20px;
+    }
+
+    .span-bold {
+        font-size: 38px;
+    }
+
+    .top__banner {
+        padding-left: calc(50% - 131.5px);
+        padding-right: calc(50% - 131.5px);
+        padding-top: 148px;
+        padding-bottom: 148px;
+    }
+
+    .top__brand {
+        padding-left: 15px;
+        justify-content: center;
+    }
+
+    .offers {
+        padding-top: 64px;
+        padding-bottom: 64px;
+        grid-template-columns: repeat(1, 343px);
+        gap: 32px;
+    }
+
+    .offers__item_wild {
+        grid-column: span 1;
+    }
+
+    .offers__item_wild img {
+        min-height: 111px;
+        object-fit: cover;
+    }
+
+    .products {
+        padding-bottom: 80px;
+    }
+
+    .products__subtitle {
+        margin-bottom: 65px;
+    }
+
+    .products__cards {
+        grid-template-columns: repeat(1, 360px);
+        gap: 16px;
+        margin-bottom: 41px;
+    }
+
+    .item__info {
+        padding: 20px 16px;
+    }
+
+    .section-feature {
+        padding-bottom: 81px;
+    }
+
+    .footer__bottom {
+        padding-top: 43px;
+        padding-bottom: 9px;
+        justify-content: center;
+        gap: 40px;
+    }
+
+
+}
+
+@media (max-width: 425px) {
+    .subscribe__email {
+        width: 70%;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .center {
+        @include center (316px);
+    }
+
+    .offers {
+        grid-template-columns: repeat(1, 310px);
+    }
+
+    .products__cards {
+        grid-template-columns: repeat(1, 310px);
+    }
+
+    .top__brand {
+        max-width: 236px;
+    }
+
+    .top__banner {
+        justify-content: center;
+    }
+
+    .section-subscribe {
+        padding-bottom: 110px;
+        gap: 59px;
+    }
+
+    .section-subscribe__text {
+        font-size: 18px;
+    }
+
+    .subscribe__title {
+        font-size: 14px;
+        line-height: 153.2%;
+    }
+}

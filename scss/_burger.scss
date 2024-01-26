@@ -1,0 +1,92 @@
+// Меню бургер
+.navbar {
+    position: relative;
+    overflow: auto;
+}
+
+.fixed-top {
+    position: relative;
+}
+
+.navbar-toggler {
+    padding: 0;
+    background-color: $backgroundBlock;
+    border: none;
+    border-radius: 0;
+
+    &:focus {
+        text-decoration: none;
+        outline: 0;
+    }
+}
+
+.navbar-dark,
+.navbar[data-bs-theme=dark] {
+    --bs-navbar-color: none;
+    --bs-navbar-hover-color: none;
+    --bs-navbar-disabled-color: none;
+}
+
+.offcanvas.offcanvas-end {
+    top: 80px;
+    width: 232px;
+}
+
+.bg-dark {
+    background-color: $backgroundBlock !important;
+}
+
+.offcanvas-body {
+    padding: 32px;
+    overflow-y: auto;
+    -webkit-box-shadow: -30px 21px 43px -23px rgba(0, 0, 0, 0.09);
+    -moz-box-shadow: -30px 21px 43px -23px rgba(0, 0, 0, 0.09);
+    box-shadow: -30px 21px 43px -23px rgba(0, 0, 0, 0.09);
+}
+
+.offcanvas {
+    position: fixed;
+    bottom: auto;
+    outline: 0;
+}
+
+.offcanvas-backdrop.show {
+    opacity: 0;
+}
+
+.text-bg-dark {
+    color: #6F6E6E !important;
+    background-color: #FFF !important;
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.navbar-nav {
+    color: #6F6E6E;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.nav-item {
+    padding-left: 22px;
+}
+
+.nav-item:hover {
+    color: $colorSelectSite;
+}
+
+.navbar-nav h3 {
+    color: #000;
+    margin-bottom: 24px;
+}
+
+.nav-list {
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.nav-list h4 {
+    color: $colorSelectSite;
+}
