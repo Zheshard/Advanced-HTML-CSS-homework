@@ -4,6 +4,7 @@
     background-color: #F8F3F4;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     &__heading {
         color: $colorSelectSite;
@@ -111,23 +112,6 @@
 
     &__sort {
         margin-bottom: 48px;
-    }
-}
-
-.sort {
-    display: flex;
-    gap: 23px;
-    color: #6F6E6E;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-
-    &__item {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 9px;
     }
 }
 

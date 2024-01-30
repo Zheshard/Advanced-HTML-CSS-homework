@@ -1,14 +1,24 @@
 $widthSite: 1140px;
 $colorSelectSite: #F16D7F;
+$colorTextGray: #6F6E6E;
 $backgroundBlock: #222;
 $gapHeader: 48px;
+
 @import 'null_style';
 @import 'mixins';
 @import 'product';
 @import 'burger';
+@import 'catalog';
 
 body {
     font-family: 'Lato', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 100vh;
 }
 
 .center {
@@ -42,42 +52,44 @@ body {
 }
 
 // Верхняя часть главной страницы сайта
-.top__banner {
-    background-color: #F1E4E6;
-    display: flex;
-    align-items: center;
+.top {
+    .top__banner {
+        background-color: #F1E4E6;
+        display: flex;
+        align-items: center;
 
-    padding-left: calc(50% - 800px);
-    padding-right: calc(50% - 800px);
-}
-
-.top__image {
-    flex: 0 0 50%;
-
-    img {
-        width: 100%;
+        padding-left: calc(50% - 800px);
+        padding-right: calc(50% - 800px);
     }
-}
 
-.top__brand {
-    padding-left: 16px;
-    border-left: 12px solid $colorSelectSite;
-    flex: 1 1 50%;
-}
+    .top__image {
+        flex: 0 0 50%;
 
-.top__title {
-    color: #222;
-    font-size: 32px;
-    font-weight: 700;
-}
+        img {
+            width: 100%;
+        }
+    }
 
-.span-bold {
-    font-weight: 900;
-    font-size: 48px;
-}
+    .top__brand {
+        padding-left: 16px;
+        border-left: 12px solid $colorSelectSite;
+        flex: 1 1 50%;
+    }
 
-.span_pink {
-    color: $colorSelectSite;
+    .top__title {
+        color: #222;
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .span-bold {
+        font-weight: 900;
+        font-size: 48px;
+    }
+
+    .span_pink {
+        color: $colorSelectSite;
+    }
 }
 
 // Предложения
@@ -132,6 +144,7 @@ body {
 
 // Продукты
 .products {
+    flex-grow: 1;
     padding-bottom: 60px;
 
     &__title {
@@ -157,74 +170,77 @@ body {
         gap: 30px;
         margin-bottom: 68px;
     }
-}
 
-.item {
-    border-color: #F8F8F8;
-    text-decoration: none;
-    display: block;
-
-    &__img {
-        position: relative;
+    .item {
+        border-color: #F8F8F8;
+        text-decoration: none;
         display: block;
 
-        & img {
-            width: 100%;
+        &__img {
+            position: relative;
+            display: block;
+
+            & img {
+                width: 100%;
+            }
         }
-    }
 
-    &__img_hover {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: rgba(58, 56, 56, 0.86);
-        justify-content: center;
-        align-items: center;
-        opacity: 0;
-        display: flex;
-        transition: opacity 0.3s;
-    }
+        &__img_hover {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(58, 56, 56, 0.86);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            display: flex;
+            transition: opacity 0.3s;
+        }
 
-    &:hover .item__img_hover {
-        opacity: 1;
-    }
+        &:hover .item__img_hover {
+            opacity: 1;
+        }
 
-    .item__img-btn {
-        display: flex;
-        align-items: center;
-        gap: 11px;
-        padding: 11px 16px 9px 13.5px;
-        border: 1px solid #FFF;
-        color: #FFF;
-        font-size: 14px;
-        font-weight: 400;
-    }
+        .item__img-btn {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            padding: 11px 16px 9px 13.5px;
+            border: 1px solid #FFF;
+            font-size: 14px;
+            font-weight: 400;
 
-    &__info {
-        padding: 24px 16px;
-    }
+            & p {
+                color: #FFF;
+            }
+        }
 
-    &__title {
-        color: #000;
-        font-size: 13px;
-        font-weight: 400;
-        margin-bottom: 16px;
-    }
+        &__info {
+            padding: 24px 16px;
+        }
 
-    &__description {
-        color: #5D5D5D;
-        font-size: 14px;
-        font-weight: 300;
-        margin-bottom: 16px;
-        max-width: 315px;
-    }
+        &__title {
+            color: #000;
+            font-size: 13px;
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
 
-    &__price {
-        color: $colorSelectSite;
-        font-size: 16px;
-        font-weight: 400;
+        &__description {
+            color: #5D5D5D;
+            font-size: 14px;
+            font-weight: 300;
+            margin-bottom: 16px;
+            max-width: 315px;
+        }
+
+        &__price {
+            color: $colorSelectSite;
+            font-size: 16px;
+            font-weight: 400;
+        }
     }
 }
 
@@ -297,96 +313,6 @@ body {
 }
 
 // Подвал
-.subscribe {
-    &__title {
-        color: #222224;
-        text-align: center;
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 167.2%;
-        margin-bottom: 32px;
-
-        & span {
-            font-size: 24px;
-            font-weight: 700;
-        }
-    }
-
-    &__form {
-        display: flex;
-
-        & input:focus {
-            outline: 0.5px solid $colorSelectSite;
-        }
-    }
-
-    &__email {
-        color: #222224;
-        font-size: 14px;
-        font-weight: 400;
-        opacity: 0.671;
-        background-color: #E1E1E1;
-        width: 256px;
-        height: 49px;
-        padding-left: 22px;
-        padding-right: 22px;
-        border: 0;
-        border-radius: 15px 0 0 15px;
-    }
-
-    &__btn {
-        color: #FFF;
-        background-color: $colorSelectSite;
-        width: 100px;
-        height: 49px;
-        text-align: center;
-        font-size: 14px;
-        font-weight: 400;
-        border: 0;
-        border-radius: 0 15px 15px 0;
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
-}
-
-.section-subscribe {
-    background: url(../img/footer/subscribe/background.png) lightgray no-repeat center;
-    background-size: cover;
-    padding-top: 97px;
-    padding-bottom: 150px;
-
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    gap: 320px;
-
-    &__info {
-        max-width: 360px;
-    }
-
-    &__image {
-        text-align: center;
-
-        & img {
-            margin-bottom: 30px;
-        }
-    }
-
-    &__text {
-        color: #222224;
-        text-align: center;
-        font-size: 20px;
-        font-weight: 400;
-
-        & span {
-            font-style: italic;
-        }
-    }
-}
-
 .footer {
 
     &__bottom {
@@ -425,6 +351,96 @@ body {
                 & path {
                     fill: #FFF;
                 }
+            }
+        }
+    }
+
+    .subscribe {
+        &__title {
+            color: #222224;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 167.2%;
+            margin-bottom: 32px;
+
+            & span {
+                font-size: 24px;
+                font-weight: 700;
+            }
+        }
+
+        &__form {
+            display: flex;
+
+            & input:focus {
+                outline: 0.5px solid $colorSelectSite;
+            }
+        }
+
+        &__email {
+            color: #222224;
+            font-size: 14px;
+            font-weight: 400;
+            opacity: 0.671;
+            background-color: #E1E1E1;
+            width: 256px;
+            height: 49px;
+            padding-left: 22px;
+            padding-right: 22px;
+            border: 0;
+            border-radius: 15px 0 0 15px;
+        }
+
+        &__btn {
+            color: #FFF;
+            background-color: $colorSelectSite;
+            width: 100px;
+            height: 49px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 400;
+            border: 0;
+            border-radius: 0 15px 15px 0;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .section-subscribe {
+        background: url(../img/footer/subscribe/background.png) lightgray no-repeat center;
+        background-size: cover;
+        padding-top: 97px;
+        padding-bottom: 150px;
+
+        display: flex;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        gap: 320px;
+
+        &__info {
+            max-width: 360px;
+        }
+
+        &__image {
+            text-align: center;
+
+            & img {
+                margin-bottom: 30px;
+            }
+        }
+
+        &__text {
+            color: #222224;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 400;
+
+            & span {
+                font-style: italic;
             }
         }
     }
