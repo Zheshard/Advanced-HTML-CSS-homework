@@ -1,3 +1,23 @@
+.btn {
+  color: #F16D7F;
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 40px;
+  border: 1px solid #F16D7F;
+  background-color: #fff;
+  transition: color 0.3s;
+}
+.btn:hover, .btn:active {
+  background-color: #F16D7F;
+  color: #fff;
+}
+.btn:hover path, .btn:active path {
+  fill: #fff;
+}
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -147,6 +167,11 @@ summary::-webkit-details-marker {
   box-sizing: border-box;
 }
 
+details,
+button {
+  cursor: pointer;
+}
+
 .top-head {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -270,16 +295,14 @@ summary::-webkit-details-marker {
 
 .burger[open] nav {
   transform: translate(-100%);
-  opacity: 100%;
   transition: all 0.5s;
+  opacity: 100%;
 }
 
 .burger__nav {
-  right: -230px;
+  right: -223px;
   top: 100%;
   position: absolute;
-  opacity: 0;
-  transition: all 0.9s;
 }
 
 .nav {
@@ -310,6 +333,7 @@ summary::-webkit-details-marker {
   gap: 11px;
 }
 .nav__links a {
+  transition: color 0.3s;
   color: #6F6E6E;
 }
 .nav__links a:hover {
@@ -351,6 +375,7 @@ summary::-webkit-details-marker {
   font-weight: 600;
 }
 .filter[open] {
+  transition: all 0.3s;
   background: #FFF;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
@@ -364,6 +389,7 @@ summary::-webkit-details-marker {
   color: #F16D7F;
 }
 .filter__subhead {
+  transition: all 0.3s;
   color: #6F6E6E;
   padding: 8px 11px 12px 11px;
   border-bottom: 1px solid #EBEBEB;
@@ -377,6 +403,7 @@ summary::-webkit-details-marker {
   gap: 11px;
 }
 .filter__link {
+  transition: color 0.3s;
   color: #6F6E6E;
 }
 .filter__link:hover {
@@ -422,6 +449,165 @@ summary::-webkit-details-marker {
   font-family: Roboto, sans-serif;
 }
 
+.orders {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 65px;
+  background: rgba(229, 229, 229, 0.3);
+  padding-top: 96px;
+  padding-bottom: 128px;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  justify-content: center;
+  align-items: center;
+}
+.cart__added-products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.cart .item-cart {
+  display: flex;
+  justify-content: center;
+  box-shadow: 17px 19px 24px 0px rgba(0, 0, 0, 0.13);
+}
+.cart .item-cart__img {
+  max-width: 262px;
+}
+.cart .item-cart__info {
+  padding: 22px 97px 62px 31px;
+  position: relative;
+}
+.cart .item-cart__info::after {
+  content: url(/img/cart/Vector.svg);
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  cursor: pointer;
+}
+.cart .item-cart__title {
+  color: rgb(34, 34, 34);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29px;
+  max-width: 205px;
+  margin-bottom: 42px;
+}
+.cart .item-cart__parameters {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cart .item-cart__parameter {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26px;
+  color: rgb(87, 87, 87);
+}
+.cart .item-cart__parameter span {
+  color: rgb(111, 110, 110);
+}
+.cart .item-cart__parameter .price {
+  color: #F16D7F;
+}
+.cart .item-cart__parameter_quantity {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.cart .item-cart__parameter_quantity span {
+  border: 1px solid rgb(234, 234, 234);
+  padding: 0.58px 16px;
+}
+.cart__buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.cart__btn {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 17px;
+  color: #000;
+  border: 1px solid rgb(164, 164, 164);
+}
+.cart__btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.data-input {
+  display: flex;
+  flex-direction: column;
+  gap: 57px;
+}
+.data-input__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.data-input__input {
+  width: 360px;
+  padding: 13px 17px 16px 17px;
+  border: 1px solid rgb(164, 164, 164);
+}
+.data-input__btn {
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 13px;
+  color: rgb(74, 74, 74);
+  border: 1px solid rgb(164, 164, 164);
+  background-color: #fff;
+  width: 110px;
+  padding: 10px 14px 12px 14px;
+}
+
+.checkout {
+  background: rgba(245, 243, 243, 0.3);
+  padding: 39px 34px 42px 44px;
+}
+.checkout__cost {
+  padding-bottom: 21px;
+  border-bottom: 1px solid rgb(226, 226, 226);
+  margin-bottom: 17px;
+}
+.checkout__subtotal, .checkout__grandtotal {
+  display: flex;
+  justify-content: end;
+  gap: 30px;
+}
+.checkout__subtotal {
+  color: rgb(74, 74, 74);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13px;
+  margin-bottom: 12px;
+}
+.checkout__grandtotal {
+  font-size: 16px;
+  line-height: 19px;
+  color: rgb(34, 34, 34);
+}
+.checkout__grandtotal span {
+  font-weight: 700;
+  color: #F16D7F;
+}
+.checkout__btn {
+  background-color: #F16D7F;
+  color: #fff;
+}
+.checkout__btn:hover {
+  background-color: #fff;
+  color: #F16D7F;
+}
+
 body {
   font-family: "Lato", sans-serif;
 }
@@ -431,6 +617,7 @@ body {
   flex-direction: column;
   overflow: hidden;
   min-height: 100vh;
+  transition: all 30s;
 }
 
 .center {
@@ -618,31 +805,10 @@ body {
   font-size: 16px;
   font-weight: 400;
 }
-
-.btn {
-  color: #F16D7F;
-  font-size: 16px;
-  font-weight: 400;
+.products__button {
   display: flex;
   justify-content: center;
-  gap: 23px;
   align-items: center;
-  padding: 15px 0;
-  width: 211px;
-  border: 1px solid #F16D7F;
-  background-color: #fff;
-  margin: 0 auto;
-  transition: all 0.3s;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-}
-.btn:hover {
-  background-color: #F16D7F;
-  color: #fff;
-}
-.btn:hover path {
-  fill: #fff;
 }
 
 .section-feature {
@@ -838,7 +1004,7 @@ body {
     padding-bottom: 64px;
     gap: 48px;
   }
-  .section-subscribe {
+  .footer .section-subscribe {
     flex-wrap: wrap;
     justify-content: center;
     gap: 90px;

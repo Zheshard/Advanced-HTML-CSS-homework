@@ -4,14 +4,40 @@ $colorTextGray: #6F6E6E;
 $backgroundBlock: #222;
 $gapHeader: 48px;
 
+.btn {
+    color: $colorSelectSite;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px 40px;
+    border: 1px solid $colorSelectSite;
+    background-color: #fff;
+    transition: color 0.3s;
+
+    &:hover,
+    &:active {
+        background-color: $colorSelectSite;
+        color: #fff;
+
+        path {
+            fill: #fff;
+        }
+    }
+}
+
 @import 'null_style';
 @import 'mixins';
 @import 'product';
 @import 'burger';
 @import 'catalog';
+@import 'cart';
 
 body {
     font-family: 'Lato', sans-serif;
+
 }
 
 .wrapper {
@@ -19,6 +45,7 @@ body {
     flex-direction: column;
     overflow: hidden;
     min-height: 100vh;
+    transition: all 30s;
 }
 
 .center {
@@ -242,37 +269,14 @@ body {
             font-weight: 400;
         }
     }
-}
 
-.btn {
-    color: $colorSelectSite;
-    font-size: 16px;
-    font-weight: 400;
-    display: flex;
-    justify-content: center;
-    gap: 23px;
-    align-items: center;
-
-
-    padding: 15px 0;
-    width: 211px;
-    border: 1px solid $colorSelectSite;
-    background-color: #fff;
-    margin: 0 auto;
-    transition: all 0.3s;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-
-    &:hover {
-        background-color: $colorSelectSite;
-        color: #fff;
-
-        path {
-            fill: #fff;
-        }
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
+
 
 // Блок особенности
 .section-feature {
@@ -510,7 +514,7 @@ body {
         gap: 48px;
     }
 
-    .section-subscribe {
+    .footer .section-subscribe {
         flex-wrap: wrap;
         justify-content: center;
         gap: 90px;

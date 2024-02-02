@@ -1,0 +1,189 @@
+.orders {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 65px;
+    background: rgba(229, 229, 229, 0.3);
+
+    padding-top: 96px;
+    padding-bottom: 128px;
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+    justify-content: center;
+    align-items: center;
+
+    &__added-products {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .item-cart {
+        display: flex;
+        justify-content: center;
+
+        box-shadow: 17px 19px 24px 0px rgba(0, 0, 0, 0.13);
+
+        &__img {
+            max-width: 262px;
+        }
+
+        &__info {
+            padding: 22px 97px 62px 31px;
+            position: relative;
+
+            &::after {
+                content: url(/img/cart/Vector.svg);
+                position: absolute;
+                top: 22px;
+                right: 28px;
+                cursor: pointer;
+            }
+        }
+
+        &__title {
+            color: rgb(34, 34, 34);
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 29px;
+            max-width: 205px;
+            margin-bottom: 42px;
+        }
+
+        &__parameters {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        &__parameter {
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 26px;
+            color: rgb(87, 87, 87);
+
+            & span {
+                color: rgb(111, 110, 110);
+            }
+
+            & .price {
+                color: $colorSelectSite;
+            }
+
+            &_quantity {
+                display: flex;
+                align-items: center;
+                gap: 25px;
+
+                & span {
+                    border: 1px solid rgb(234, 234, 234);
+                    padding: 0.58px 16px;
+                }
+            }
+        }
+    }
+
+    &__buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    &__btn {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 17px;
+        color: #000;
+        border: 1px solid rgb(164, 164, 164);
+
+        &:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    }
+}
+
+.data-input {
+    display: flex;
+    flex-direction: column;
+    gap: 57px;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__input {
+        width: 360px;
+        padding: 13px 17px 16px 17px;
+        border: 1px solid rgb(164, 164, 164);
+    }
+
+    &__btn {
+        font-size: 11px;
+        font-weight: 300;
+        line-height: 13px;
+        color: rgb(74, 74, 74);
+        border: 1px solid rgb(164, 164, 164);
+        background-color: #fff;
+        width: 110px;
+        padding: 10px 14px 12px 14px;
+    }
+}
+
+.checkout {
+    background: rgba(245, 243, 243, 0.3);
+    padding: 39px 34px 42px 44px;
+
+    &__cost {
+        padding-bottom: 21px;
+        border-bottom: 1px solid rgb(226, 226, 226);
+        margin-bottom: 17px;
+    }
+
+    &__subtotal,
+    &__grandtotal {
+        display: flex;
+        justify-content: end;
+        gap: 30px;
+    }
+
+    &__subtotal {
+        color: rgb(74, 74, 74);
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 13px;
+        margin-bottom: 12px;
+    }
+
+    &__grandtotal {
+        font-size: 16px;
+
+        line-height: 19px;
+        color: rgb(34, 34, 34);
+
+        & span {
+            font-weight: 700;
+            color: $colorSelectSite;
+        }
+    }
+
+    &__btn {
+        background-color: $colorSelectSite;
+        color: #fff;
+
+        &:hover {
+            background-color: #fff;
+            color: $colorSelectSite;
+        }
+    }
+
+}
