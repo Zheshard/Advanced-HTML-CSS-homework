@@ -1,0 +1,90 @@
+.registration {
+    padding-top: 64px;
+    padding-bottom: 96px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 29px;
+    letter-spacing: 0%;
+
+    &__btn {
+        width: 180px;
+        gap: 20px;
+
+        padding: 16px 29px;
+
+        &:hover,
+        &:active {
+            path {
+                fill: $colorSelectSite;
+            }
+        }
+    }
+
+    &__info {
+        max-width: 650px;
+    }
+
+    &__head {
+        margin-bottom: 22px;
+    }
+
+    &__text {
+        margin-bottom: 22px;
+    }
+
+    &__list-item {
+        margin-bottom: 10px;
+        padding-left: 43px;
+        position: relative;
+
+        &::before {
+            content: url(../img/registration/Vector.svg);
+            position: absolute;
+            left: 0;
+        }
+    }
+
+    .data-input {
+        &__radio {
+            margin-top: 13px;
+            margin-bottom: 13px;
+            display: flex;
+            align-items: center;
+
+            & input {
+                margin: 0;
+                width: 17px;
+                height: 17px;
+            }
+
+            & label {
+                margin-left: 10px;
+                margin-right: 20px;
+
+                color: rgb(0, 0, 0);
+                font-size: 11px;
+                font-weight: 300;
+                line-height: 13px;
+                letter-spacing: 0%;
+            }
+        }
+
+        &__text {
+            color: rgb(177, 177, 177);
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 16px;
+            letter-spacing: 0%;
+
+            max-width: 360px;
+            margin-bottom: 19px;
+
+        }
+    }
+}

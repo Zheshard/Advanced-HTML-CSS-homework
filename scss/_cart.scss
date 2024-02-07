@@ -115,6 +115,14 @@
     flex-direction: column;
     gap: 57px;
 
+    &__head {
+        color: rgb(34, 34, 34);
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 19px;
+
+    }
+
     &__form {
         display: flex;
         flex-direction: column;
@@ -123,8 +131,13 @@
 
     &__input {
         width: 360px;
-        padding: 13px 17px 16px 17px;
+        padding: 13px 17px 13px 17px;
         border: 1px solid rgb(164, 164, 164);
+
+        &:focus {
+            outline: 0.5px solid $colorSelectSite;
+            border: none;
+        }
     }
 
     &__btn {
