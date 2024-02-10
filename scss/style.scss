@@ -461,7 +461,8 @@ body {
 
 @media (max-width: 1024px) {
     .center {
-        @include center (736px);
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     .header {
@@ -530,9 +531,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    .center {
-        @include center (360px);
-    }
 
     .header {
         padding-top: 18px;
@@ -630,10 +628,6 @@ body {
 }
 
 @media (max-width: 375px) {
-
-    .center {
-        @include center (316px);
-    }
 
     .offers {
         grid-template-columns: repeat(1, 310px);

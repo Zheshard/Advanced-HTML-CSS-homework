@@ -10,24 +10,71 @@
     padding-bottom: 65px;
     position: relative;
 
+    @media (max-width: 1024px) {
+        padding-top: 24px;
+        padding-bottom: 40px;
+    }
+
     &__container {
-        position: absolute;
+        position: relative;
         display: flex;
+        justify-content: space-between;
         z-index: 10;
-        gap: 30px;
+        align-items: center;
+    }
+
+    &__sort {
+        position: relative;
+        right: -35%;
+
+        @media (max-width: 1024px) {
+            position: relative;
+            right: -100%;
+            transform: translate(-100%, 0);
+        }
+
+        &_catalog {
+            padding-top: 13px;
+        }
     }
 }
 
 .filter {
     box-sizing: border-box;
-    width: 360px;
     padding: 13px 16px 16px;
-    position: relative;
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 0;
 
     &__head {
         display: flex;
         gap: 11px;
         align-items: baseline;
+    }
+
+    &__icon_big {
+        display: none;
+    }
+
+    @media (max-width: 425px) {
+        padding-left: 0;
+
+        .filter__head span {
+            display: none;
+        }
+
+        &__details {
+            padding-left: 16px;
+        }
+
+        .filter__icon {
+            display: none;
+        }
+
+        &__icon_big {
+            display: block;
+        }
     }
 
     &__head span {
@@ -37,6 +84,7 @@
     }
 
     &[open] {
+        width: 360px;
         transition: all .3s;
         background: #FFF;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -46,12 +94,15 @@
         color: $colorSelectSite;
     }
 
+
     &[open] &__head path {
         fill: $colorSelectSite;
     }
 
     &__details {
+
         &[open] .filter__subhead {
+
             color: $colorSelectSite;
         }
     }
@@ -86,12 +137,17 @@
 }
 
 .sort {
+
     display: flex;
     gap: 28px;
 
-    &_catalog {
-        padding-top: 13px;
+
+
+    @media (max-width: 425px) {
+        gap: 20px;
     }
+
+
 
     &__details {
         position: relative;
@@ -102,9 +158,17 @@
         align-items: center;
         gap: 10px;
 
+        @media (max-width: 425px) {
+            gap: 8px
+        }
+
         & span {
             color: $colorTextGray;
             @extend %text-style;
+
+            @media (max-width: 425px) {
+                font-size: 12px;
+            }
         }
     }
 
